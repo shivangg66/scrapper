@@ -27,11 +27,11 @@ export async function scrappingController(req: Request, res: Response) {
       if (comments >= 0 && comments <= 100) {
         appendFileSync("yc_result.csv", `${title},${comments},0-100\n`);
       } else if (comments >= 101 && comments <= 200) {
-        appendFileSync("yc_result.csv", `${title},${comments},0-100\n`);
+        appendFileSync("yc_result.csv", `${title},${comments},101-200\n`);
       } else if (comments >= 201 && comments <= 300) {
-        appendFileSync("yc_result.csv", `${title},${comments},0-100\n`);
+        appendFileSync("yc_result.csv", `${title},${comments},201-300\n`);
       } else {
-        appendFileSync("yc_result.csv", `${title},${comments},0-100\n`);
+        appendFileSync("yc_result.csv", `${title},${comments},301-n\n`);
       }
     });
     res.status(200).json({ message: "Response created" }).send();
